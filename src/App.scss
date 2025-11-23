@@ -1,0 +1,20 @@
+
+body{
+
+    background-color: black;
+
+
+    .header{
+        background-color: black;
+    }
+
+
+    .productos{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+    }
+}
