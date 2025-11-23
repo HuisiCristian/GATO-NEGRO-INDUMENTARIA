@@ -1,0 +1,28 @@
+
+.NavBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo{
+        img{
+            width: 7vw;
+            height: auto;
+            border-radius: 1rem;
+        }
+    }
+    .links-navbar{
+        display: flex;
+        list-style: none;
+        gap: 4rem;
+        li{
+            a{
+                text-decoration: none;
+                color: #B7A685;
+                font-size: 2rem;
+                
+            }
+
+        }
+    }
+
+}
