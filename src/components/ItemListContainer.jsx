@@ -1,57 +1,44 @@
 import './ItemListContainer.scss';
 import ItemCard from './ItemCard';
+import productos from '../data/Productos';
+import { useState, useEffect } from 'react'
+import getData, { getCategoryData } from '../data/mockService';
+import { useParams } from 'react-router-dom';   
 
 export default function ItemListContainer(props) {
+    const [productos, setProductos] = useState([]);
+
+    const {categoryID} = useParams()
+
+        
+    useEffect(() => {
+        if (categoryID){
+            getCategoryData(categoryID).then(respuesta => setProductos(respuesta))
+        }
+        else{
+            getData().then(respuesta => setProductos(respuesta))
+        }
+    },[categoryID])
+
     return (
         <>
-        <div className="mensaje-bienvenida">
-            <h1>{props.bienvenida}</h1>
-        </div>
+            <div className="mensaje-bienvenida">
+                <h1>{props.bienvenida}</h1>
+            </div>
 
-        <div className="productos">
-            <ItemCard 
-            img= "./src/assets/AGUILA1.jpg"
-            title= "Remera Oversize Aguila"
-            price= "$24.000"
-            descripcion= "Algodón peinado 20/1. Cuello ribb. No destiñe, ni achica con los lavados"
-            />
-
-            <ItemCard  
-            img= "./src/assets/FLOWER1.jpg"
-            title= "Remera Oversize Flower"
-            price= "$24.000"
-            descripcion= "Algodón peinado 20/1. Cuello ribb. No destiñe, ni achica con los lavados"
-            />
-
-            <ItemCard  
-            img= "./src/assets/BOSTON1.jpg"
-            title= "Remera Oversize Boston"
-            price= "$24.000"
-            descripcion= "Algodón peinado 20/1. Cuello ribb. No destiñe, ni achica con los lavados"
-            />
-
-            <ItemCard  
-            img= "./src/assets/ANGELES1.jpg"
-            title= "Remera Oversize Los Angeles"
-            price= "$24.000"
-            descripcion= "Algodón peinado 20/1. Cuello ribb. No destiñe, ni achica con los lavados"
-            />
-
-            <ItemCard  
-            img= "./src/assets/VICTORY1.jpg"
-            title= "Remera Oversize Victory"
-            price= "$24.000"
-            descripcion= "Algodón peinado 20/1. Cuello ribb. No destiñe, ni achica con los lavados"
-            />
-
-            <ItemCard  
-            img= "./src/assets/WHATEVER1.jpg"
-            title= "Remera Oversize Whatever"
-            price= "$24.000"
-            descripcion= "Algodón peinado 20/1. Cuello ribb. No destiñe, ni achica con los lavados"
-            />
-                
-        </div>
+            <div className="productos">
+                {
+                    productos.map(
+                        (item) => <ItemCard
+                            key={item.id}
+                            {...item}
+                            />
+                    )
+                }
+                    
+            </div>
         
-    </> )
+        </> 
+    )
+
 }
