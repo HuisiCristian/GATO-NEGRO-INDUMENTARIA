@@ -17,7 +17,7 @@ function ItemDetailContainer() {
             <div className="col-info">
                 <h2>{producto.title}</h2>
                 <img src={producto.img} alt={producto.title} />
-                <h4>{producto.price?.toLocaleString('es-AR')}</h4>
+                <h4>${producto.price?.toLocaleString('es-AR')}</h4>
                 <p>{producto.descripcion}</p>
             </div>
 
