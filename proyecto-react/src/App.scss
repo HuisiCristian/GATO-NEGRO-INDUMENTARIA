@@ -1,8 +1,26 @@
 
 body{
+
     background-color: black;
-    
+
+
     .header{
         background-color: black;
+    }
+
+
+    .productos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-items: stretch;
+        padding: 20px;
+        gap: 2rem;
+        width: 100%;
+        justify-items: center;
+        
+
+        
+
     }
 }
