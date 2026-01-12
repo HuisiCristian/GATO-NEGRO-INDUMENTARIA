@@ -9,8 +9,8 @@ export default function ItemCard(props){
                 <h2>{props.title}</h2>
                 <img src={props.img}/>
                 <h3>${props.price?.toLocaleString('es-AR')}</h3>
-                <p>{props.descripcion}</p>
-                <Link to={`/producto/${props.id}`}>
+                {/* <p>{props.descripcion}</p> */}
+                <Link to={`/producto/${props.id}`} className='boton-prodcutos'>
                     <button>Ver producto</button>
                 </Link>
 
@@ -20,3 +20,4 @@ export default function ItemCard(props){
     )
 
 }
+

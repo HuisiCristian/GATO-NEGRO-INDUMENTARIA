@@ -11,10 +11,16 @@ body{
 
     .productos{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         justify-content: center;
-        align-items: center;
-        gap: 1rem;
+        align-items: stretch;
+        padding: 20px;
+        gap: 2rem;
+        width: 100%;
+        justify-items: center;
+        
+
+        
 
     }
 }

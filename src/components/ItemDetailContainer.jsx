@@ -14,12 +14,16 @@ function ItemDetailContainer() {
     
     return (
         <section className='item-detail-container'>
+            <div className="col-info">
+                <h2>{producto.title}</h2>
+                <img src={producto.img} alt={producto.title} />
+                <h4>{producto.price?.toLocaleString('es-AR')}</h4>
+                <p>{producto.descripcion}</p>
+            </div>
 
-            <h2>{producto.title}</h2>
-            <img src={producto.img} alt={producto.title} />
-            <p>{producto.descripcion}</p>
-            <h4>{producto.price?.toLocaleString('es-AR')}</h4>
-            <ItemCount stock={producto.stock} />
+            <div className="agregar-carrito">
+                <ItemCount stock={producto.stock} className="item-count" />
+            </div>
         </section>
     )
 }
