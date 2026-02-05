@@ -2,7 +2,7 @@ import productos from "./Productos"
 
 const miPromise =new Promise ((resolve,reject) =>{})
 
-function getData(){
+export function getData(){
     const promiseData = new Promise ((resolve,reject) =>{
 
         setTimeout(() => { resolve(productos)},1500);

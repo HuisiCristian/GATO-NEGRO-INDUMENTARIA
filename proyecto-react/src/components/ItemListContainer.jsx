@@ -2,7 +2,7 @@ import './ItemListContainer.scss';
 import ItemCard from './ItemCard';
 import productos from '../data/Productos';
 import { useState, useEffect } from 'react'
-import getData, { getCategoryData } from '../data/mockService';
+import { getData, getCategoryData } from "../data/firestore";
 import { useParams } from 'react-router-dom';   
 
 export default function ItemListContainer(props) {
@@ -12,13 +12,13 @@ export default function ItemListContainer(props) {
 
         
     useEffect(() => {
-        if (categoryID){
-            getCategoryData(categoryID).then(respuesta => setProductos(respuesta))
+        
+        if (categoryID) {
+            getCategoryData(categoryID).then(respuesta => setProductos(respuesta));
+        } else {
+            getData().then(respuesta => setProductos(respuesta));
         }
-        else{
-            getData().then(respuesta => setProductos(respuesta))
-        }
-    },[categoryID])
+    }, [categoryID]);
 
     return (
         <>

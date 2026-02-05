@@ -131,16 +131,16 @@ const productos = [
 
     // PANTALONES $30.000 //
     { 
-        id: 15, 
+        id: "15", 
         img: "/assets/BAGGYNEGRO.jpg", 
-        title: "Bermuda Baggy Negro", 
+        title: "Bermuda Baggy Negro",   
         price: 30000, 
         descripcion: "Bermuda baggy color negro. Talles del 38 al 48.", 
         category: "Bermudas", 
         stock: 2 
     },
     { 
-        id: 16, 
+        id: "16", 
         img: "/assets/BAGGYGRIS.jpg", 
         title: "Bermuda Baggy Gris", 
         price: 30000, 
@@ -149,7 +149,7 @@ const productos = [
         stock: 2 
     },
     { 
-        id: 17, 
+        id: "17", 
         img: "/assets/BAGGYCELESTE.jpg", 
         title: "Bermuda Baggy Celeste", 
         price: 30000, 
