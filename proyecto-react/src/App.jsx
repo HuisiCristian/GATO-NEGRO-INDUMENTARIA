@@ -5,7 +5,7 @@ import {BrowserRouter, Routes, Route, Link} from 'react-router'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import { CartProvider } from './context/cartContext'
 import CardContainer from './components/CardContainer'
-
+import {exportProductsToFirestore} from './data/firestore'
 
 
 
@@ -24,7 +24,7 @@ function App() {
             
         </div>
 
-        
+        <button onClick={exportProductsToFirestore}>EXPORTAR</button>
           
         <Routes>
 

@@ -28,8 +28,7 @@ export async function getData() {
     });
 }
 
-
-export async function getItemData(itemID) { 
+export async function getItemData(itemID) {
     const documentRef = doc(db, 'productos', itemID);
     const docSnapshot = await getDoc(documentRef);
     return { ...docSnapshot.data(), id: docSnapshot.id };
